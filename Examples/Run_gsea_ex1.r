@@ -38,7 +38,8 @@ gsea_ex1 <- function(DE_out_path = NULL, export_path = NULL,
       myClass <- useIDmappingFile(myClass=myClass,
                                   geneMapTable=geneMapTable)
     }
-    colnames(myClass) <- c("log2FoldChange","AveExpr","t","P.Value","padj","B","gene_name")
+    
+	# colnames(myClass) <- c("baseMean","log2FoldChange","lfcSE","stat","p","padj","gene_name")
     
     #DEGTable <- subset(myClass, abs(log2FoldChange) >= .58 & (padj < 0.05) )
     DEGTable <- subset(myClass, (padj < 0.05) )
